@@ -15,7 +15,13 @@ return new class extends Migration
     {
         Schema::create('airport_codes', function (Blueprint $table) {
             $table->id();
+            $table->string('name')->nullable();
+            $table->string('code')->nullable();
+            $table->string('stateCode')->nullable();
+            $table->string('countryCode')->nullable();
+            $table->string('countryName')->nullable();
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 

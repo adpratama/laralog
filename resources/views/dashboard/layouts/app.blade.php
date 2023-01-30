@@ -15,9 +15,37 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
         integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="{{ asset('dashboard/library/select2/dist/css/select2.min.css') }}">
     <script src="https://code.iconify.design/iconify-icon/1.0.2/iconify-icon.min.js"></script>
 
     @stack('style')
+    <style>
+        /* width */
+        ::-webkit-scrollbar {
+            opacity: 0;
+            width: 5px;
+        }
+
+        /* Track */
+        /* ::-webkit-scrollbar-track {
+            box-shadow: inset 0 0 5px grey;
+            border-radius: 10px;
+         } */
+
+        /* Handle */
+        ::-webkit-scrollbar-thumb {
+            background: #fe5000;
+            border-radius: 1.5px;
+        }
+
+        /* Handle on hover */
+        ::-webkit-scrollbar-thumb:hover {
+            overflow-y: scroll;
+            opacity: 1;
+            background: #101820;
+        }
+
+    </style>
 
     <!-- Template CSS -->
     <link rel="stylesheet" href="{{ asset('dashboard/css/style.css') }}">
@@ -62,9 +90,10 @@
     <script src="{{ asset('dashboard/library/popper.js/dist/umd/popper.js') }}"></script>
     <script src="{{ asset('dashboard/library/tooltip.js/dist/umd/tooltip.js') }}"></script>
     <script src="{{ asset('dashboard/library/bootstrap/dist/js/bootstrap.min.js') }}"></script>
-    <script src="{{ asset('dashboard/library/jquery.nicescroll/dist/jquery.nicescroll.min.js') }}"></script>
+    <!-- <script src="{{ asset('dashboard/library/jquery.nicescroll/dist/jquery.nicescroll.min.js') }}"></script> -->
     <script src="{{ asset('dashboard/library/moment/min/moment.min.js') }}"></script>
     <script src="{{ asset('dashboard/js/stisla.js') }}"></script>
+    <script src="{{ asset('dashboard/library/select2/dist/js/select2.full.min.js') }}"></script>
 
     @stack('scripts')
 

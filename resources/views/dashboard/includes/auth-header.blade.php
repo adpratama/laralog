@@ -1,6 +1,3 @@
  <div class="login-brand">
-     <img src="{{ asset('img/stisla-fill.svg') }}"
-         alt="logo"
-         width="100"
-         class="shadow-light rounded-circle">
+     <img src="{{ asset('landing-page/img/logo-laralog-2.png') }}" alt="logo" width="200" class="">
  </div>

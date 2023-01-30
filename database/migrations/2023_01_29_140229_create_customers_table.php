@@ -15,7 +15,17 @@ return new class extends Migration
     {
         Schema::create('customers', function (Blueprint $table) {
             $table->id();
+            $table->string('name');
+            $table->string('code');
+            $table->string('address');
+            $table->string('city');
+            $table->string('zipcode');
+            $table->string('email');
+            $table->string('phone');
+            $table->string('tax_number');
+            $table->string('active_status');
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 

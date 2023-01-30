@@ -64,7 +64,7 @@
 }
 
 a {
-    color: #6777ef;
+    color: #fe5000;
     font-weight: 500;
     transition: all 0.5s;
     -webkit-transition: all 0.5s;
@@ -224,7 +224,7 @@ ol {
 .custom-select:focus,
 .custom-file-label:focus {
     background-color: #fefeff;
-    border-color: #95a0f4;
+    border-color: #fe5000;
 }
 
 .input-group-text,
@@ -286,7 +286,7 @@ select.form-control:not([size]):not([multiple]) {
 .form-group .control-label,
 .form-group > label {
     font-weight: 600;
-    color: #34395e;
+    color: #101820;
     font-size: 12px;
     letter-spacing: 0.5px;
 }
@@ -835,7 +835,7 @@ select.form-control:not([size]):not([multiple]) {
 .card .card-header h4 {
     font-size: 16px;
     line-height: 28px;
-    color: #6777ef;
+    color: #fe5000;
     padding-right: 10px;
     margin-bottom: 0;
 }
@@ -953,7 +953,7 @@ select.form-control:not([size]):not([multiple]) {
     background-position: center;
 }
 .card.card-primary {
-    border-top: 2px solid #6777ef;
+    border-top: 2px solid #fe5000;
 }
 .card.card-secondary {
     border-top: 2px solid #cdd3d8;

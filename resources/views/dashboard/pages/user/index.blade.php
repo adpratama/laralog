@@ -1,322 +1,54 @@
 @extends('dashboard.layouts.app')
 
-@section('title', 'DataTables')
+@section('title', 'Users')
 
 @push('style')
 <!-- CSS Libraries -->
-{{-- <link rel="stylesheet"
-        href="assets/modules/datatables/datatables.min.css">
-    <link rel="stylesheet"
-        href="assets/modules/datatables/DataTables-1.10.16/css/dataTables.bootstrap4.min.css">
-    <link rel="stylesheet"
-        href="assets/modules/datatables/Select-1.2.4/css/select.bootstrap4.min.css"> --}}
-
-<link rel="stylesheet" href="{{ asset('library/datatables/media/css/jquery.dataTables.min.css') }}">
+<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css">
+<link rel="stylesheet" type="text/css" href="//cdn.datatables.net/1.10.7/css/jquery.dataTables.min.css">
 @endpush
 
 @section('main')
 <div class="main-content">
     <section class="section">
         <div class="section-header">
-            <h1>DataTables</h1>
+            <h1>Users</h1>
             <div class="section-header-breadcrumb">
-                <div class="breadcrumb-item active"><a href="#">Dashboard</a></div>
-                <div class="breadcrumb-item"><a href="#">Modules</a></div>
-                <div class="breadcrumb-item">DataTables</div>
+                <div class="breadcrumb-item active"><a href="{{ url('/home') }}">Dashboard</a></div>
+                <div class="breadcrumb-item">Users</div>
             </div>
         </div>
 
+        @include('sweetalert::alert')
         <div class="section-body">
-            <h2 class="section-title">DataTables</h2>
-            <p class="section-lead">
-                We use 'DataTables' made by @SpryMedia. You can check the full documentation <a
-                    href="https://datatables.net/">here</a>.
-            </p>
-
             <div class="row">
                 <div class="col-12">
                     <div class="card">
                         <div class="card-header">
-                            <h4>Basic DataTables</h4>
-                        </div>
-                        <div class="card-body">
-                            <div class="table-responsive">
-                                <table class="table-striped table" id="table-1">
-                                    <thead>
-                                        <tr>
-                                            <th class="text-center">
-                                                #
-                                            </th>
-                                            <th>Task Name</th>
-                                            <th>Progress</th>
-                                            <th>Members</th>
-                                            <th>Due Date</th>
-                                            <th>Status</th>
-                                            <th>Action</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <tr>
-                                            <td>
-                                                1
-                                            </td>
-                                            <td>Create a mobile app</td>
-                                            <td class="align-middle">
-                                                <div class="progress" data-height="4" data-toggle="tooltip"
-                                                    title="100%">
-                                                    <div class="progress-bar bg-success" data-width="100%"></div>
-                                                </div>
-                                            </td>
-                                            <td>
-                                                <img alt="image" src="{{ asset('img/avatar/avatar-5.png') }}"
-                                                    class="rounded-circle" width="35" data-toggle="tooltip"
-                                                    title="Wildan Ahdian">
-                                            </td>
-                                            <td>2018-01-20</td>
-                                            <td>
-                                                <div class="badge badge-success">Completed</div>
-                                            </td>
-                                            <td><a href="#" class="btn btn-secondary">Detail</a></td>
-                                        </tr>
-                                        <tr>
-                                            <td>
-                                                2
-                                            </td>
-                                            <td>Redesign homepage</td>
-                                            <td class="align-middle">
-                                                <div class="progress" data-height="4" data-toggle="tooltip" title="0%">
-                                                    <div class="progress-bar" data-width="0"></div>
-                                                </div>
-                                            </td>
-                                            <td>
-                                                <img alt="image" src="{{ asset('img/avatar/avatar-1.png') }}"
-                                                    class="rounded-circle" width="35" data-toggle="tooltip"
-                                                    title="Nur Alpiana">
-                                                <img alt="image" src="{{ asset('img/avatar/avatar-3.png') }}"
-                                                    class="rounded-circle" width="35" data-toggle="tooltip"
-                                                    title="Hariono Yusup">
-                                                <img alt="image" src="{{ asset('img/avatar/avatar-4.png') }}"
-                                                    class="rounded-circle" width="35" data-toggle="tooltip"
-                                                    title="Bagus Dwi Cahya">
-                                            </td>
-                                            <td>2018-04-10</td>
-                                            <td>
-                                                <div class="badge badge-info">Todo</div>
-                                            </td>
-                                            <td><a href="#" class="btn btn-secondary">Detail</a></td>
-                                        </tr>
-                                        <tr>
-                                            <td>
-                                                3
-                                            </td>
-                                            <td>Backup database</td>
-                                            <td class="align-middle">
-                                                <div class="progress" data-height="4" data-toggle="tooltip" title="70%">
-                                                    <div class="progress-bar bg-warning" data-width="70%"></div>
-                                                </div>
-                                            </td>
-                                            <td>
-                                                <img alt="image" src="{{ asset('img/avatar/avatar-1.png') }}"
-                                                    class="rounded-circle" width="35" data-toggle="tooltip"
-                                                    title="Rizal Fakhri">
-                                                <img alt="image" src="{{ asset('img/avatar/avatar-2.png') }}"
-                                                    class="rounded-circle" width="35" data-toggle="tooltip"
-                                                    title="Hasan Basri">
-                                            </td>
-                                            <td>2018-01-29</td>
-                                            <td>
-                                                <div class="badge badge-warning">In Progress</div>
-                                            </td>
-                                            <td><a href="#" class="btn btn-secondary">Detail</a></td>
-                                        </tr>
-                                        <tr>
-                                            <td>
-                                                4
-                                            </td>
-                                            <td>Input data</td>
-                                            <td class="align-middle">
-                                                <div class="progress" data-height="4" data-toggle="tooltip"
-                                                    title="100%">
-                                                    <div class="progress-bar bg-success" data-width="100%"></div>
-                                                </div>
-                                            </td>
-                                            <td>
-                                                <img alt="image" src="{{ asset('img/avatar/avatar-2.png') }}"
-                                                    class="rounded-circle" width="35" data-toggle="tooltip"
-                                                    title="Rizal Fakhri">
-                                                <img alt="image" src="{{ asset('img/avatar/avatar-5.png') }}"
-                                                    class="rounded-circle" width="35" data-toggle="tooltip"
-                                                    title="Isnap Kiswandi">
-                                                <img alt="image" src="{{ asset('img/avatar/avatar-4.png') }}"
-                                                    class="rounded-circle" width="35" data-toggle="tooltip"
-                                                    title="Yudi Nawawi">
-                                                <img alt="image" src="{{ asset('img/avatar/avatar-1.png') }}"
-                                                    class="rounded-circle" width="35" data-toggle="tooltip"
-                                                    title="Khaerul Anwar">
-                                            </td>
-                                            <td>2018-01-16</td>
-                                            <td>
-                                                <div class="badge badge-success">Completed</div>
-                                            </td>
-                                            <td><a href="#" class="btn btn-secondary">Detail</a></td>
-                                        </tr>
-                                    </tbody>
-                                </table>
+                            <h4>Users List</h4>
+                            <div class="card-header-action">
+                                <a href="{{ route('user.create') }}" class="btn btn-primary btn-sm ">Add User</a>
                             </div>
                         </div>
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-12">
-                    <div class="card">
-                        <div class="card-header">
-                            <h4>Advanced Table</h4>
-                        </div>
                         <div class="card-body">
                             <div class="table-responsive">
-                                <table class="table-striped table" id="table-2">
+                                <table class="table-striped table" id="users-table">
                                     <thead>
                                         <tr>
-                                            <th class="text-center">
-                                                <div class="custom-checkbox custom-control">
-                                                    <input type="checkbox" data-checkboxes="mygroup"
-                                                        data-checkbox-role="dad" class="custom-control-input"
-                                                        id="checkbox-all">
-                                                    <label for="checkbox-all"
-                                                        class="custom-control-label">&nbsp;</label>
-                                                </div>
-                                            </th>
-                                            <th>Task Name</th>
-                                            <th>Progress</th>
-                                            <th>Members</th>
-                                            <th>Due Date</th>
-                                            <th>Status</th>
+                                            <th>Num.</th>
+                                            <th>Name</th>
+                                            <th>Email</th>
                                             <th>Action</th>
                                         </tr>
                                     </thead>
-                                    <tbody>
+                                    <tfoot>
                                         <tr>
-                                            <td>
-                                                <div class="custom-checkbox custom-control">
-                                                    <input type="checkbox" data-checkboxes="mygroup"
-                                                        class="custom-control-input" id="checkbox-1">
-                                                    <label for="checkbox-1" class="custom-control-label">&nbsp;</label>
-                                                </div>
-                                            </td>
-                                            <td>Create a mobile app</td>
-                                            <td class="align-middle">
-                                                <div class="progress" data-height="4" data-toggle="tooltip"
-                                                    title="100%">
-                                                    <div class="progress-bar bg-success" data-width="100%"></div>
-                                                </div>
-                                            </td>
-                                            <td>
-                                                <img alt="image" src="{{ asset('img/avatar/avatar-5.png') }}"
-                                                    class="rounded-circle" width="35" data-toggle="tooltip"
-                                                    title="Wildan Ahdian">
-                                            </td>
-                                            <td>2018-01-20</td>
-                                            <td>
-                                                <div class="badge badge-success">Completed</div>
-                                            </td>
-                                            <td><a href="#" class="btn btn-secondary">Detail</a></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
                                         </tr>
-                                        <tr>
-                                            <td>
-                                                <div class="custom-checkbox custom-control">
-                                                    <input type="checkbox" data-checkboxes="mygroup"
-                                                        class="custom-control-input" id="checkbox-2">
-                                                    <label for="checkbox-2" class="custom-control-label">&nbsp;</label>
-                                                </div>
-                                            </td>
-                                            <td>Redesign homepage</td>
-                                            <td class="align-middle">
-                                                <div class="progress" data-height="4" data-toggle="tooltip" title="0%">
-                                                    <div class="progress-bar" data-width="0"></div>
-                                                </div>
-                                            </td>
-                                            <td>
-                                                <img alt="image" src="{{ asset('img/avatar/avatar-1.png') }}"
-                                                    class="rounded-circle" width="35" data-toggle="tooltip"
-                                                    title="Nur Alpiana">
-                                                <img alt="image" src="{{ asset('img/avatar/avatar-3.png') }}"
-                                                    class="rounded-circle" width="35" data-toggle="tooltip"
-                                                    title="Hariono Yusup">
-                                                <img alt="image" src="{{ asset('img/avatar/avatar-4.png') }}"
-                                                    class="rounded-circle" width="35" data-toggle="tooltip"
-                                                    title="Bagus Dwi Cahya">
-                                            </td>
-                                            <td>2018-04-10</td>
-                                            <td>
-                                                <div class="badge badge-info">Todo</div>
-                                            </td>
-                                            <td><a href="#" class="btn btn-secondary">Detail</a></td>
-                                        </tr>
-                                        <tr>
-                                            <td>
-                                                <div class="custom-checkbox custom-control">
-                                                    <input type="checkbox" data-checkboxes="mygroup"
-                                                        class="custom-control-input" id="checkbox-3">
-                                                    <label for="checkbox-3" class="custom-control-label">&nbsp;</label>
-                                                </div>
-                                            </td>
-                                            <td>Backup database</td>
-                                            <td class="align-middle">
-                                                <div class="progress" data-height="4" data-toggle="tooltip" title="70%">
-                                                    <div class="progress-bar bg-warning" data-width="70%"></div>
-                                                </div>
-                                            </td>
-                                            <td>
-                                                <img alt="image" src="{{ asset('img/avatar/avatar-1.png') }}"
-                                                    class="rounded-circle" width="35" data-toggle="tooltip"
-                                                    title="Rizal Fakhri">
-                                                <img alt="image" src="{{ asset('img/avatar/avatar-2.png') }}"
-                                                    class="rounded-circle" width="35" data-toggle="tooltip"
-                                                    title="Hasan Basri">
-                                            </td>
-                                            <td>2018-01-29</td>
-                                            <td>
-                                                <div class="badge badge-warning">In Progress</div>
-                                            </td>
-                                            <td><a href="#" class="btn btn-secondary">Detail</a></td>
-                                        </tr>
-                                        <tr>
-                                            <td>
-                                                <div class="custom-checkbox custom-control">
-                                                    <input type="checkbox" data-checkboxes="mygroup"
-                                                        class="custom-control-input" id="checkbox-4">
-                                                    <label for="checkbox-4" class="custom-control-label">&nbsp;</label>
-                                                </div>
-                                            </td>
-                                            <td>Input data</td>
-                                            <td class="align-middle">
-                                                <div class="progress" data-height="4" data-toggle="tooltip"
-                                                    title="100%">
-                                                    <div class="progress-bar bg-success" data-width="100%"></div>
-                                                </div>
-                                            </td>
-                                            <td>
-                                                <img alt="image" src="{{ asset('img/avatar/avatar-2.png') }}"
-                                                    class="rounded-circle" width="35" data-toggle="tooltip"
-                                                    title="Rizal Fakhri">
-                                                <img alt="image" src="{{ asset('img/avatar/avatar-5.png') }}"
-                                                    class="rounded-circle" width="35" data-toggle="tooltip"
-                                                    title="Isnap Kiswandi">
-                                                <img alt="image" src="{{ asset('img/avatar/avatar-4.png') }}"
-                                                    class="rounded-circle" width="35" data-toggle="tooltip"
-                                                    title="Yudi Nawawi">
-                                                <img alt="image" src="{{ asset('img/avatar/avatar-1.png') }}"
-                                                    class="rounded-circle" width="35" data-toggle="tooltip"
-                                                    title="Khaerul Anwar">
-                                            </td>
-                                            <td>2018-01-16</td>
-                                            <td>
-                                                <div class="badge badge-success">Completed</div>
-                                            </td>
-                                            <td><a href="#" class="btn btn-secondary">Detail</a></td>
-                                        </tr>
-                                    </tbody>
+                                    </tfoot>
                                 </table>
                             </div>
                         </div>
@@ -330,13 +62,72 @@
 
 @push('scripts')
 <!-- JS Libraies -->
-{{-- <script src="assets/modules/datatables/DataTables-1.10.16/js/dataTables.bootstrap4.min.js"></script>
-    <script src="assets/modules/datatables/Select-1.2.4/js/dataTables.select.min.js"></script> --}}
-<script src="{{ asset('library/datatables/media/js/jquery.dataTables.min.js') }}"></script>
-{{-- <script src="{{ asset() }}"></script> --}}
-{{-- <script src="{{ asset() }}"></script> --}}
-<script src="{{ asset('library/jquery-ui-dist/jquery-ui.min.js') }}"></script>
+<script src="{{ asset('dashboard/library/datatables/media/js/jquery.dataTables.min.js') }}"></script>
+<script src="{{ asset('dashboard/library/jquery-ui-dist/jquery-ui.min.js') }}"></script>
 
-<!-- Page Specific JS File -->
-<script src="{{ asset('js/page/modules-datatables.js') }}"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.0/sweetalert.min.js"></script>
+
+<script>
+    // Datatable User
+    $(document).ready(function () {
+        $('#users-table').DataTable({
+            processing: true,
+            serverSide: true,
+            ajax: '{!! route("user.index") !!}',
+            columns: [{
+                    data: 'DT_RowIndex',
+                    orderable: false,
+                    searchable: false
+                },
+                // {
+                //     data: 'id',
+                //     name: 'id'
+                // },
+                {
+                    data: 'name',
+                    name: 'name',
+                    orderable: true
+                },
+                {
+                    data: 'email',
+                    name: 'email'
+                },
+                {
+                    data: 'action',
+                    name: 'action'
+                }
+            ],
+            // initComplete: function () {
+            //     this.api().columns().every(function () {
+            //         var column = this;
+            //         var input = document.createElement("input");
+            //         $(input).appendTo($(column.footer()).empty())
+            //             .on('change', function () {
+            //                 column.search($(this).val(), false, false, true).draw();
+            //             });
+            //     })
+            // }
+        });
+    });
+
+    // Sweet alert confirm delete
+    $('.show_confirm').click(function (event) {
+        var form = $(this).closest("form");
+        var name = $(this).data("name");
+        event.preventDefault();
+        swal({
+                title: "Are you sure want to delete this record?",
+                text: "If you delete this, it will be gone forever",
+                icon: "warning",
+                buttons: true,
+                dangerMode: true,
+            })
+            .then((willDelete) => {
+                if (willDelete) {
+                    form.submit();
+                }
+            });
+    });
+
+</script>
 @endpush

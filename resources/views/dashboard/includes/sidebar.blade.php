@@ -1,7 +1,10 @@
 <div class="main-sidebar sidebar-style-2">
     <aside id="sidebar-wrapper">
         <div class="sidebar-brand">
-            <a href="{{ url('/') }}">Laralog</a>
+            <a href="{{ url('/') }}">
+                <!-- <img src="{{ asset('landing-page/img/logo-laralog2.png')}}" alt=""> -->
+                <img src="{{ asset('landing-page/img/logo-laralog-2.png') }}" alt="logo" width="100" class="">
+            </a>
         </div>
         <div class="sidebar-brand sidebar-brand-sm">
             <a href="index.html">LL</a>
@@ -11,7 +14,7 @@
                 <a class="nav-link" href="{{ url('home') }}"><i class="fas fa-fire"></i> <span>Dashboard</span></a>
             </li>
             <li class="menu-header">Master</li>
-            <li class="nav-item dropdown {{ $type_menu === 'data_master' ? 'active' : '' }}">
+            <li class="nav-item dropdown">
                 <a href="#" class="nav-link has-dropdown" data-toggle="dropdown">
                     <i class="fas fa-columns"></i>
                     <span>Data Master</span>

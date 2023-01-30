@@ -32,5 +32,6 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 Route::middleware('auth')->group(function() {
     Route::resource('customer', CustomerController::class);
     Route::resource('airport_code', AirportCodeController::class);
-    Route::get('/user', [\App\Http\Controllers\UserController::class, 'index'])->name('user.index');
+    Route::get('/airport_code/json', [\App\Http\Controllers\AirportCodeController::class, 'data'])->name('airport_code.data');
+    Route::resource('user', UserController::class);
 });
