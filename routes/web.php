@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\CustomerController;
 use App\Http\Controllers\AirportCodeController;
+use App\Http\Controllers\IncomingController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
@@ -34,4 +35,7 @@ Route::middleware('auth')->group(function() {
     Route::resource('airport_code', AirportCodeController::class);
     Route::get('/airport_code/json', [\App\Http\Controllers\AirportCodeController::class, 'data'])->name('airport_code.data');
     Route::resource('user', UserController::class);
+    Route::resource('incoming', IncomingController::class);
+    Route::get('incoming/remove_all', [IncomingController::class, 'remove_all'])->name('incoming.remove_all');
+    Route::get('incoming/create_invoice/{id}', [IncomingController::class, 'create_invoice'])->name('incoming.create_invoice');
 });

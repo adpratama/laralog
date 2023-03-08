@@ -44,7 +44,15 @@ class AirportCodeController extends Controller
 
     public function create()
     {
-        //
+        $country_codes = AirportCode::select('countryCode')->groupBy('countryCode')->get();
+        $country_names = AirportCode::select('countryName')->groupBy('countryName')->get();
+
+        return view('dashboard.pages.airport_code.create', [
+            'type_menu' => 'data_menu'
+        ])->with([
+            'country_codes' => $country_codes,
+            'country_names' => $country_names
+        ]);
     }
 
     /**
@@ -55,7 +63,18 @@ class AirportCodeController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $data = $request->all();
+
+        AirportCode::create([
+            'name' => $data["name"],
+            'code' => $data["code"],
+            'countryCode' => $data["countryCode"],
+            'countryName' => $data["countryName"],
+        ]);
+
+        toast('Data Airport of '.$data["name"].' added successfully', 'success');
+
+        return redirect()->route('airport_code.index');
     }
 
     /**

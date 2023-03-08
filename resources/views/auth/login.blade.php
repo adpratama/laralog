@@ -52,7 +52,7 @@
                 </button>
             </div>
         </form>
-        <div class="mt-4 mb-3 text-center">
+        <!-- <div class="mt-4 mb-3 text-center">
             <div class="text-job text-muted">Login With Social</div>
         </div>
         <div class="row sm-gutters">
@@ -66,7 +66,7 @@
                     <span class="fab fa-twitter"></span> Twitter
                 </a>
             </div>
-        </div>
+        </div> -->
 
     </div>
 </div>

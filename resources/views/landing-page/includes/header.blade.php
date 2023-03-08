@@ -40,26 +40,26 @@
                 </a>
             </li>
 
-            @if (Route::has('login'))
+
 
             <li>
+                @if (Route::has('login'))
                 @auth
-                <a href="{{ url('/home') }}" class="text-sm text-gray-700 dark:text-gray-500 underline" alt="Dashboard">
-                    <iconify-icon icon="majesticons:door-enter-line">Dashboard</iconify-icon>
+                <a href="{{ url('/home') }}" class="" alt="Dashboard">
+                    <iconify-icon icon="mdi:login">Dashboard</iconify-icon>
                 </a>
                 @else
-                <a href="{{ route('login') }}" class="text-sm text-gray-700 dark:text-gray-500 underline">Log in</a>
+                <a href="{{ route('login') }}" class="">
+                    <iconify-icon icon="mdi:login"></iconify-icon>Login
+                </a>
 
-                @if (Route::has('register'))
+                <!-- @if (Route::has('register'))
                 <a href="{{ route('register') }}"
                     class="ml-4 text-sm text-gray-700 dark:text-gray-500 underline">Register</a>
-                @endif
+                @endif -->
                 @endauth
+                @endif
             </li>
-            @endif
-        </ul>
-        <ul class="css-main-nav">
-
         </ul>
         <div class="extra-text visible-xs">
             <a href="#" class="css-burger-menu"><i>Menu</i></a>

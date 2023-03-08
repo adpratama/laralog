@@ -114,7 +114,7 @@ a.hover-reverse:hover {
     width: 100%;
     z-index: 4;
     position: fixed;
-    background: rgba(16, 24, 32);
+    background: #0f0e17;
     -webkit-transition: 0.8s all ease-out;
     transition: 0.8s all ease-out;
 }
@@ -136,7 +136,7 @@ a.hover-reverse:hover {
 .css-logo:active,
 .css-logo:focus,
 .css-logo:hover {
-    color: #fe5000;
+    color: #ff8906;
 }
 @media screen and (max-width: 768px) {
     .css-logo {
@@ -231,7 +231,7 @@ a.hover-reverse:hover {
     font-family: Inconsolata, monospace;
 }
 .css-main-nav li a:hover {
-    border-bottom: 2px solid #fe5000;
+    border-bottom: 2px solid #ff8906;
 }
 .css-mobile-menu-active .css-main-nav li a {
     margin-bottom: 10px;
@@ -286,7 +286,7 @@ a.hover-reverse:hover {
     font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
 .css-header-social li a:hover {
-    color: #fe5000;
+    color: #ff8906;
 }
 .mobile-menu-overlay {
     z-index: 1099;
@@ -328,7 +328,7 @@ a.hover-reverse:hover {
     -webkit-transition: 0.9s all ease-out;
     transition: 0.9s all ease-out;
     bottom: 20px;
-    color: #fe5000;
+    color: #ff8906;
     opacity: 1;
     visibility: visible;
 }
@@ -383,7 +383,7 @@ a.hover-reverse:hover {
 .css-intro h1 {
     font-size: 120px;
     text-transform: uppercase;
-    color: #101820;
+    color: #0f0e17;
     font-weight: 900;
     line-height: 100px;
     margin-bottom: 0;
@@ -411,7 +411,7 @@ a.hover-reverse:hover {
 .css-intro .css-subtitle .heading-with-icon,
 .css-intro .css-subtitle h2 {
     margin-top: 0;
-    color: #fe5000;
+    color: #ff8906;
     font-weight: 300;
     font-family: Inconsolata, monospace;
     letter-spacing: 0.1em;
@@ -427,7 +427,7 @@ a.hover-reverse:hover {
     left: 0;
     width: 50px;
     height: 2px;
-    background: #fe5000;
+    background: #ff8906;
 }
 .css-intro .css-subtitle .heading-with-icon a,
 .css-intro .css-subtitle h2 a {
@@ -550,22 +550,26 @@ a.hover-reverse:hover {
     padding-top: 20px;
     padding-bottom: 20px;
 }
+.btn.btn-sm {
+    padding: 0.1rem 0.4rem;
+    font-size: 12px;
+}
 .btn.btn-primary {
-    border: 2px solid #101820;
-    background: #101820;
+    border: 2px solid #0f0e17;
+    background: #0f0e17;
     color: #fff;
 }
 .btn.btn-primary:active,
 .btn.btn-primary:focus,
 .btn.btn-primary:hover {
-    background: #fe5000;
+    background: #ff8906;
     color: #fff;
-    border: 2px solid #fe5000;
+    border: 2px solid #ff8906;
 }
 .btn.btn-primary:active,
 .btn.btn-primary:focus {
     outline: 0;
-    border: 2px solid #fe5000;
+    border: 2px solid #ff8906;
 }
 .btn.btn-ghost {
     background: 0 0;
@@ -708,7 +712,7 @@ a.hover-reverse:hover {
     left: 0;
     width: 50px;
     height: 2px;
-    background: #fe5000;
+    background: #ff8906;
 }
 .css-owl-navigation {
     margin: 0;
@@ -820,7 +824,7 @@ a.hover-reverse:hover {
 }
 .css-footer {
     padding: 3em 0;
-    background: #101820;
+    background: #0f0e17;
     position: relative;
     color: rgba(255, 255, 255, 0.7);
 }
@@ -837,7 +841,7 @@ a.hover-reverse:hover {
     display: inline-block;
     zoom: 1;
     text-align: center;
-    background: #fe5000;
+    background: #ff8906;
     color: #fff !important;
     width: 60px;
     height: 60px;

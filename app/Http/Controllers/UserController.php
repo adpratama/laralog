@@ -18,15 +18,15 @@ class UserController extends Controller
         if ($request->ajax()) {
             
             return DataTables::of(User::query()->orderBy('name'))
-            ->addColumn('action', function($data) {
-                $url_edit = url('user/'.$data->id.'/edit');
-                $url_delete = route('user.destroy', $data->id);
+                ->addColumn('action', function($data) {
+                    $url_edit = url('user/'.$data->id.'/edit');
+                    $url_delete = route('user.destroy', $data->id);
 
-                $button = '<a href="'.$url_edit.'" class="btn btn-primary btn-sm">Edit</a>';
-                $button .= '<span>&nbsp;</span><a href="'.$url_delete.'" class="btn btn-danger btn-sm show_confirm">Delete</a>';
+                    $button = '<a href="'.$url_edit.'" class="btn btn-primary btn-sm">Edit</a>';
+                    $button .= '<span>&nbsp;</span><a href="'.$url_delete.'" class="btn btn-danger btn-sm show_confirm">Delete</a>';
 
-                return $button;
-            })
+                    return $button;
+                })
             ->addIndexColumn()
             ->rawColumns(['status', 'action'])
             ->make(true);
@@ -47,8 +47,7 @@ class UserController extends Controller
         $item = User::findOrFail($id);
         return view ('dashboard.pages.user.edit', [
             'type_menu' => 'data_master'
-        ])
-        ->with([
+        ])->with([
             'item' => $item
         ]);
     }

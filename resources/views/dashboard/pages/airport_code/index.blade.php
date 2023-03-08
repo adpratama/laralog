@@ -2,12 +2,6 @@
 
 @section('title', 'IATA Airport Code')
 
-@push('style')
-<!-- CSS Libraries -->
-<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css">
-<link rel="stylesheet" type="text/css" href="//cdn.datatables.net/1.10.7/css/jquery.dataTables.min.css">
-@endpush
-
 @section('main')
 <div class="main-content">
     <section class="section">
@@ -63,12 +57,6 @@
 @endsection
 
 @push('scripts')
-<!-- JS Libraies -->
-<script src="{{ asset('dashboard/library/datatables/media/js/jquery.dataTables.min.js') }}"></script>
-<script src="{{ asset('dashboard/library/jquery-ui-dist/jquery-ui.min.js') }}"></script>
-
-<script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.0/sweetalert.min.js"></script>
-
 <script>
     // Datatable User
     $(document).ready(function () {
